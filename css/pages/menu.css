@@ -1,0 +1,428 @@
+/* -------------------------------------------
+   MENU PAGE — Premium Light Theme (KOLBOX)
+   Uses rem/clamp and responsive grid
+------------------------------------------- */
+
+.menu-hero{
+  position: relative;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+}
+
+.menu-title{
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-subtitle{
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  opacity: 0.75;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  color: rgba(17,17,17,0.75);
+  display: flex;
+  justify-content: center;
+}
+
+/* Tabs (top switcher) */
+.tabs{
+  position: relative;
+  display: inline-flex;
+  gap: 0.4rem;
+  padding: 0.35rem;
+  border-radius: 999rem;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(206,164,100,0.22);
+  backdrop-filter: blur(0.6rem);
+}
+
+.tab{
+  position: relative;
+  z-index: 2;
+  border: 0;
+  background: transparent;
+  padding: 0.7rem 1rem;
+  border-radius: 999rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.tab.is-active{ opacity: 1; }
+
+.tab-indicator{
+  position: absolute;
+  z-index: 1;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  left: 0;
+  border-radius: 999rem;
+  background: linear-gradient(135deg, rgba(206,164,100,0.55), rgba(206,164,100,0.22));
+  transition: transform 520ms cubic-bezier(.16, 1, .2, 1),
+              width 520ms cubic-bezier(.16, 1, .2, 1);
+}
+
+/* Panels */
+.panel{ display: none; padding: clamp(1.2rem, 3vw, 2rem) 0; }
+.panel.is-active{ display: block; }
+
+.panel-title{
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.panel-hint{
+  margin-top: 0.6rem;
+  color: rgba(17,17,17,0.55);
+  line-height: 1.7;
+}
+
+/* -------------------------------------------
+   SPECIALS LAYOUT (Fix: Map + Legend same level)
+------------------------------------------- */
+
+.panel-head{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
+  grid-template-areas:
+    "head head"
+    "map  legend";
+  gap: clamp(1rem, 2.6vw, 1.6rem);
+  align-items: start;
+}
+
+.specials-head{ grid-area: head; }
+.region-card{ grid-area: map; }
+.price-legend{
+  grid-area: legend;
+  align-self: start;
+  min-width: 0;
+}
+
+/* Specials grid (days) */
+.specials-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+/* Cards */
+.day-card{
+  border-radius: clamp(1.1rem, 2.2vw, 1.6rem);
+  padding: clamp(1rem, 2.2vw, 1.25rem);
+  border: 1px solid rgba(206,164,100,0.18);
+  background: rgba(255,255,255,0.78);
+  box-shadow: 0 1.2rem 3.5rem rgba(0,0,0,0.06);
+}
+
+.day-card__head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.day-card__day{
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.day-card__meta{
+  font-size: 0.78rem;
+  color: rgba(17,17,17,0.55);
+}
+
+/* Meals rows */
+.meal-row{
+  display: grid;
+  grid-template-columns: 0.8rem 1fr;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+}
+
+.meal-row + .meal-row{
+  border-top: 1px solid rgba(206,164,100,0.12);
+}
+
+.meal-row__dot{
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999rem;
+  margin-top: 0.25rem;
+  background: rgba(206,164,100,0.85);
+  box-shadow: 0 0.6rem 1.8rem rgba(206,164,100,0.22);
+}
+
+.meal-row__name{
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.meal-row__box{
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(17,17,17,0.6);
+}
+
+/* -------------------------------------------
+   Menu Lists (Everyday / Salads)
+------------------------------------------- */
+
+.menu-list{
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.menu-item{
+  border-radius: clamp(1.05rem, 2vw, 1.45rem);
+  padding: clamp(1rem, 2vw, 1.2rem);
+  border: 1px solid rgba(206,164,100,0.16);
+  background: rgba(255,255,255,0.78);
+  box-shadow: 0 1.2rem 3.5rem rgba(0,0,0,0.05);
+}
+
+.menu-item__head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.menu-item__name{
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.menu-item__price{
+  font-weight: 600;
+  color: rgba(17,17,17,0.55);
+  white-space: nowrap;
+}
+
+.menu-item__desc{
+  margin-top: 0.45rem;
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: rgba(17,17,17,0.6);
+}
+
+/* -------------------------------------------
+   Price Legend
+------------------------------------------- */
+
+.price-legend{
+  border-radius: clamp(1.05rem, 2vw, 1.4rem);
+  padding: 1rem;
+  border: 1px solid rgba(206,164,100,0.18);
+  background: rgba(255,255,255,0.78);
+  box-shadow: 0 1.2rem 3.5rem rgba(0,0,0,0.05);
+}
+
+.price-legend__title{
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: rgba(17,17,17,0.72);
+  margin-bottom: 0.75rem;
+}
+
+.price-legend__grid{
+  display: grid;
+  gap: 0.55rem;
+}
+
+.price-pill{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999rem;
+  background: linear-gradient(135deg, rgba(206,164,100,0.22), rgba(206,164,100,0.10));
+  border: 1px solid rgba(206,164,100,0.22);
+}
+
+.price-pill__size{
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.price-pill__price{
+  font-weight: 700;
+  color: rgba(3,51,0,0.82);
+  white-space: nowrap;
+}
+
+.price-legend__note{
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(17,17,17,0.56);
+}
+
+/* -------------------------------------------
+   Region Card + Map
+------------------------------------------- */
+
+.region-card{
+  border-radius: clamp(1.05rem, 2vw, 1.4rem);
+  padding: 1rem;
+  border: 1px solid rgba(206,164,100,0.18);
+  background: rgba(255,255,255,0.78);
+  box-shadow: 0 1.2rem 3.5rem rgba(0,0,0,0.05);
+}
+
+.region-card__head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.region-card__title{
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: rgba(17,17,17,0.72);
+}
+
+.region-card__sub{
+  font-size: 0.86rem;
+  color: rgba(17,17,17,0.58);
+}
+
+.region-badge{
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999rem;
+  background: rgba(206,164,100,0.18);
+  border: 1px solid rgba(206,164,100,0.24);
+  color: rgba(17,17,17,0.72);
+  font-weight: 600;
+}
+
+.lb-map{
+  height: clamp(12rem, 22vw, 16rem);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  border: 1px solid rgba(206,164,100,0.14);
+}
+
+.region-msg{
+  margin-top: 0.8rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 1rem;
+  background: rgba(206,164,100,0.12);
+  border: 1px solid rgba(206,164,100,0.20);
+  color: rgba(17,17,17,0.68);
+  line-height: 1.55;
+  font-size: 0.88rem;
+}
+
+.region-link{
+  border: 0;
+  background: transparent;
+  color: rgba(3,51,0,0.85);
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Leaflet controls premium match */
+.lb-map .leaflet-control-attribution{
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.lb-map .leaflet-control-zoom{
+  border: 0;
+  box-shadow: 0 0.8rem 2.4rem rgba(0,0,0,0.12);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+/* Prevent scroll anchoring jumps (helps later) */
+.menu-page,
+.menu-panels,
+.panel,
+.panel-head,
+.specials-grid{
+  overflow-anchor: none;
+}
+
+/* -------------------------------------------
+   Responsive
+------------------------------------------- */
+
+@media (max-width: 1024px){
+  .panel-head{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "map"
+      "legend";
+  }
+
+  .price-legend{
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px){
+  .tabs{
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tab{
+    padding: 0.6rem 0.8rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+
+  .lb-map{
+    height: clamp(12rem, 42vw, 16rem);
+  }
+
+  .specials-grid{
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  /* Ensure all menu sections have breathing space */
+@media (max-width: 600px){
+  .menu-page .container{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .brand__logo { width: 3.7rem; height: 3.7rem; }
+}
+}

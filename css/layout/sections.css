@@ -1,0 +1,22 @@
+.section{
+  padding: clamp(3.5rem, 7vw, 5.75rem) var(--container-pad);
+}
+
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* Reveal animation */
+.reveal{
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}

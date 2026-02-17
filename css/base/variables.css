@@ -1,0 +1,44 @@
+:root {
+  --container-width: 1200px;
+
+  --color-primary: #CEA464;   /* Sunlit Clay */
+  --color-secondary: #033300; /* Black Forest */
+  --color-tertiary: #E90000;  /* Pure Red */
+
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-muted: rgba(17, 17, 17, 0.62);
+  --color-border: rgba(0, 0, 0, 0.12);
+
+  /* Premium “glow” elevation */
+  --glow: 0 18px 60px rgba(206, 164, 100, 0.18);
+
+  /* Ultra-minimal typography rhythm */
+  --tracking-wide: 0.18em;
+
+   /* Responsive spacing scale (rem-based) */
+  --s-1: 0.25rem;   /* 4px */
+  --s-2: 0.5rem;    /* 8px */
+  --s-3: 0.75rem;   /* 12px */
+  --s-4: 1rem;      /* 16px */
+  --s-5: 1.5rem;    /* 24px */
+  --s-6: 2rem;      /* 32px */
+  --s-7: 3rem;      /* 48px */
+  --s-8: 4rem;      /* 64px */
+  --s-9: 5.5rem;    /* 88px */
+
+  /* Radius scale */
+  --r-pill: 999rem;
+  --r-soft: 0.75rem;
+  --r-card: 1.75rem;
+  --r-media: 1.5rem;
+
+  /* Container padding */
+  --container-pad: clamp(1rem, 3vw, 1.5rem);
+
+  /* Navbar sizing */
+  --nav-pad: 0.375rem;         /* ~6px */
+  --nav-link-pad-y: 0.625rem;  /* ~10px */
+  --nav-link-pad-x: 0.875rem;  /* ~14px */
+  --nav-gap: 0.375rem;         /* ~6px */
+}

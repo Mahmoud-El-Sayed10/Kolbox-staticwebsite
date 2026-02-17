@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOLBOX — Menu</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="./../css/main.css" />
+  <link rel="stylesheet" href="../css/pages/menu.css" />
+
+  <!-- Shared scripts -->
+  <script src="./../js/shared/nav.js" defer></script>
+
+  <!-- Page scripts -->
+  <script src="../js/pages/menu-tabs.js" defer></script>
+</head>
+
+<body class="page page--menu">
+  <!-- Header (same as index) -->
+  <header class="site-header site-header--overlay">
+    <nav class="nav">
+      <a class="brand" href="./../index.html" aria-label="KOLBOX Home">
+        <img
+          class="brand__logo"
+          src="./../assets/images/logo/kolbox-logo.jpg"
+          alt="KOLBOX logo"
+        />
+      </a>
+
+      <div class="nav-pill" data-nav>
+        <span class="nav-indicator" aria-hidden="true"></span>
+
+        <!-- Note: active class should match the current page -->
+        <a class="nav-link" href="./../index.html">Home</a>
+        <a class="nav-link is-active" href="./../pages/menu.html">Menu</a>
+        <a class="nav-link" href="./../pages/contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="menu-page">
+    <!-- Hero -->
+    <section class="menu-hero">
+      <div class="container">
+        <h1 class="menu-title">Menu</h1>
+        <p class="menu-subtitle">Explore this week’s specials and our everyday favorites.</p>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    <section class="menu-tabs">
+      <div class="container">
+        <div class="tabs" data-tabs>
+          <button class="tab is-active" type="button" data-tab="specials">Special Meals</button>
+          <button class="tab" type="button" data-tab="everyday">Available Everyday</button>
+          <button class="tab" type="button" data-tab="salads">Salads</button>
+
+          <div class="tab-indicator" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panels -->
+    <section class="menu-panels">
+      <div class="container">
+
+        <!-- ✅ Specials Panel -->
+        <div class="panel is-active" data-panel="specials">
+          <div class="panel-head">
+            <!-- Row 1: Title + hint (full width) -->
+            <div class="specials-head">
+              <h2 class="panel-title">Special Meals (This Week)</h2>
+              <p class="panel-hint">Monday–Sunday • Two meals per day</p>
+            </div>
+
+            <!-- Row 2 Left: Map Card -->
+            <div class="region-card">
+              <div class="region-card__head">
+                <div class="region-card__title">This rotation</div>
+                <div class="region-card__sub">
+                  Inspired by <span class="region-badge">Mount Lebanon</span>
+                </div>
+              </div>
+
+              <div id="lb-map" class="lb-map" aria-label="Lebanon regions map"></div>
+
+              <div class="region-msg" id="region-msg" hidden>
+                The food this rotation is currently inspired from
+                <button class="region-link" type="button" id="region-chouf">Chouf</button>
+                region — come back soon to see which region is next.
+              </div>
+            </div>
+
+            <!-- Row 2 Right: Price Legend -->
+            <aside class="price-legend" aria-label="Price legend">
+              <div class="price-legend__title">Price Legend</div>
+
+              <div class="price-legend__grid">
+                <div class="price-pill">
+                  <span class="price-pill__size">2 persons</span>
+                  <span class="price-pill__price">—</span>
+                </div>
+
+                <div class="price-pill">
+                  <span class="price-pill__size">4 persons</span>
+                  <span class="price-pill__price">—</span>
+                </div>
+
+                <div class="price-pill">
+                  <span class="price-pill__size">6 persons</span>
+                  <span class="price-pill__price">—</span>
+                </div>
+              </div>
+
+              <div class="price-legend__note">
+                Prices may vary by recipe. Meat/chicken sealed separately.
+              </div>
+            </aside>
+          </div>
+
+          <!-- Specials Cards -->
+          <div class="specials-grid">
+            <!-- Monday -->
+            <div class="day-card">
+              <div class="day-card__head">
+                <h3 class="day-card__day">Monday</h3>
+                <span class="day-card__meta">2 meals</span>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tuesday -->
+            <div class="day-card">
+              <div class="day-card__head">
+                <h3 class="day-card__day">Tuesday</h3>
+                <span class="day-card__meta">2 meals</span>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="day-card">
+              <div class="day-card__head">
+                <h3 class="day-card__day">Wednesday</h3>
+                <span class="day-card__meta">2 meals</span>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thursday -->
+            <div class="day-card">
+              <div class="day-card__head">
+                <h3 class="day-card__day">Thursday</h3>
+                <span class="day-card__meta">2 meals</span>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Friday -->
+            <div class="day-card">
+              <div class="day-card__head">
+                <h3 class="day-card__day">Friday</h3>
+                <span class="day-card__meta">2 meals</span>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Saturday -->
+            <div class="day-card">
+              <div class="day-card__head">
+                <h3 class="day-card__day">Saturday</h3>
+                <span class="day-card__meta">2 meals</span>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sunday -->
+            <div class="day-card">
+              <div class="day-card__head">
+                <h3 class="day-card__day">Sunday</h3>
+                <span class="day-card__meta">2 meals</span>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+
+              <div class="meal-row">
+                <div class="meal-row__dot"></div>
+                <div class="meal-row__info">
+                  <div class="meal-row__name">Meal Name (placeholder)</div>
+                  <div class="meal-row__box">Box includes: chopped veg • spices • sauce • protein sealed separately</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ Available Everyday Panel -->
+        <div class="panel" data-panel="everyday">
+          <h2 class="panel-title">Available Everyday</h2>
+          <p class="panel-hint">Classic favorites available any day.</p>
+
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="menu-item__head">
+                <div class="menu-item__name">Meal Name (placeholder)</div>
+                <div class="menu-item__price">—</div>
+              </div>
+              <div class="menu-item__desc">Box includes: prepared ingredients • spices • recipe steps</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__head">
+                <div class="menu-item__name">Meal Name (placeholder)</div>
+                <div class="menu-item__price">—</div>
+              </div>
+              <div class="menu-item__desc">Box includes: prepared ingredients • spices • recipe steps</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__head">
+                <div class="menu-item__name">Meal Name (placeholder)</div>
+                <div class="menu-item__price">—</div>
+              </div>
+              <div class="menu-item__desc">Box includes: prepared ingredients • spices • recipe steps</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ Salads Panel -->
+        <div class="panel" data-panel="salads">
+          <h2 class="panel-title">Salads</h2>
+          <p class="panel-hint">Fresh, light, and seasonally prepared.</p>
+
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="menu-item__head">
+                <div class="menu-item__name">Salad Name (placeholder)</div>
+                <div class="menu-item__price">—</div>
+              </div>
+              <div class="menu-item__desc">Includes: fresh vegetables • dressing • toppings</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__head">
+                <div class="menu-item__name">Salad Name (placeholder)</div>
+                <div class="menu-item__price">—</div>
+              </div>
+              <div class="menu-item__desc">Includes: fresh vegetables • dressing • toppings</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Leaflet JS + map script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../js/pages/menu-map.js" defer></script>
+  </main>
+</body>
+</html>
