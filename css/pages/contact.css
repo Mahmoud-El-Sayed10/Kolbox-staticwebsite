@@ -43,8 +43,9 @@
   margin-top: 0.75rem;
   margin-bottom: 0;
   font-size: clamp(1rem, 1.6vw, 1.15rem);
-  color: rgba(17,17,17,0.70);
+  color: rgba(17,17,17,0.75);
   line-height: 1.7;
+  opacity: 0.9;
 }
 
 /* Main grid */

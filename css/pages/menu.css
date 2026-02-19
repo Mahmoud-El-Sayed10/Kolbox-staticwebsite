@@ -28,7 +28,7 @@
 .menu-subtitle{
   margin-top: 0.75rem;
   margin-bottom: 0;
-  opacity: 0.75;
+  opacity: 0.9;
   font-size: clamp(1rem, 1.7vw, 1.25rem);
   color: rgba(17,17,17,0.75);
   display: flex;
@@ -425,4 +425,93 @@
 @media (max-width: 900px) {
   .brand__logo { width: 3.7rem; height: 3.7rem; }
 }
+}
+
+/* Price chips used inside meals */
+.meal-prices,
+.menu-item__prices{
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.price-chip{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 999rem;
+  border: 1px solid rgba(206,164,100,0.22);
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 0.8rem 2rem rgba(0,0,0,0.05);
+  white-space: nowrap;
+}
+
+.price-chip .pval{
+  font-weight: 850;
+  color: rgb(230, 0, 0); /* Pure Red */
+  font-size: 0.8rem;
+  font-weight: 2000;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Icons: 1 / 2 / 4 people */
+.people-icon{
+  display: inline-block;
+  width: 0.95rem;
+  height: 0.95rem;
+  position: relative;
+}
+
+.people-icon::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999rem;
+  background: rgba(3,51,0,0.88);
+  box-shadow: 0 0.45rem 1.2rem rgba(3,51,0,0.12);
+}
+
+/* two dots */
+.people-icon.two::before{
+  width: 0.32rem;
+  height: 0.32rem;
+  box-shadow:
+    0.46rem 0 rgba(3,51,0,0.88);
+}
+
+/* four dots (2x2) */
+.people-icon.four::before{
+  width: 0.28rem;
+  height: 0.28rem;
+  bottom: 0.4rem;
+  box-shadow:
+    0.44rem 0 rgba(3,51,0,0.88),
+    0 0.44rem rgba(3,51,0,0.88),
+    0.44rem 0.44rem rgba(3,51,0,0.88);
+}
+
+/* ---------- Mobile tuning ---------- */
+@media (max-width: 520px){
+  .tabs{
+    width: 100%;
+    justify-content: space-between;
+  }
+  .tab{
+    padding: 0.65rem 0.75rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+  .meal-row__top{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .meal-prices,
+  .menu-item__prices{
+    justify-content: flex-start;
+  }
 }
