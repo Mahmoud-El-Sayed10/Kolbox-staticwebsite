@@ -10,10 +10,10 @@
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url("../../assets/images/hero/hero-placeholder.jpg");
-  background-size: cover;
+  background-image: url("../../assets/images/hero/hersotest5.jpg");
+  background-size:cover;
   background-position: center;
-  transform: scale(1.04);
+  transform: scale(1);
 }
 
 .hero__overlay {
